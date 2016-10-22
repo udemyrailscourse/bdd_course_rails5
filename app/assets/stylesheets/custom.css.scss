@@ -1,2 +1,49 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  padding-top: 80px;
+  background: #e1e1e1;
+  color: #64103F;
+}
+
+// Navbar styling
+.navbar {
+ background: #64103F;
+ padding-bottom: 20px;
+}
+
+.navbar-default .navbar-brand {
+  padding-top: 25px;
+  font-size: 150%;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #ff0000;
+}
+
+.navbar-default {
+  border: #64103F;
+}
+
+.navbar-nav {
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.navbar-default .navbar-nav li > a {
+  font-weight: bold;
+  font-size: 130%;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav li > a:hover {
+  color: #ff0000;
+}
+
+// Form styling
+.page-heading, div > label {
+  color: #64103F;
+}
