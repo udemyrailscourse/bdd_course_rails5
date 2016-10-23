@@ -9,46 +9,7 @@
   </head>
 
   <body>
-    <header role="banner">
-      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <%= link_to "Blog App", root_path, class: "navbar-brand" %>
-          </div>
-          <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><%= link_to "Authors", "#" %></li>
-              <% unless user_signed_in? %>
-                <li><%= link_to "Sign up", new_user_registration_path %></li>
-                <li><%= link_to "Sign in", new_user_session_path %></li>
-              <% end %>
-              <% if user_signed_in? %>
-                <p class="navbar-text">
-                  Signed in as <%= "#{current_user.email}" %>
-                </p>
-              <% end %>
-              <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
-            </ul>
-          </div>
-        </div>
-      </nav>  
-    </header>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <% flash.each do |key, message| %>
-            <div class="text-center alert alert-<%= key == 'notice'? 'success': 'danger' %>">
-              <%= message %>
-            </div>
-          <% end %>
-          <%= yield %>
-        </div>
-      </div>
-    </div>
+    <%= render 'shared/header' %>
+    <%= render 'shared/main' %>
   </body>
 </html>

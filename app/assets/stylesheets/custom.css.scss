@@ -97,3 +97,19 @@ body {
 .sign-link a {
   color: #64103F;
 }
+
+#error_explanation {
+ background-color: #f2dede;
+ color: #a94442;
+ text-align: left;
+ padding: 5px 20px;
+ margin-bottom: 30px;
+}
+
+#error_explanation h2 {
+ font-size: 150%;
+}
+
+footer {
+  color: #64103F;
+}
