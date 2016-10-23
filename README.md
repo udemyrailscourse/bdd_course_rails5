@@ -1,18 +1,6 @@
-Articles will belong to users
+Restric Access -
 
-Users will own articles
+- Hide the "New Article" button from non-signed in users
+- Hide the "Edit" and "Delete" buttons from non-owners of the article 
+- Permit the owners to edit or delete their own articles
 
-Users - 1 side of this
-
-Articles - many
-
-1 user can have many articles
-
-an article can only belong to 1 user
-
-foreign key of user_id in the articles table
-
-Steps:
-
-- Create the spec
-- 
