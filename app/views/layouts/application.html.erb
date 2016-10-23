@@ -21,7 +21,7 @@
             <%= link_to "Blog App", root_path, class: "navbar-brand" %>
           </div>
           <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navbar-right">
               <li class="active"><%= link_to "Authors", "#" %></li>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
               <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
