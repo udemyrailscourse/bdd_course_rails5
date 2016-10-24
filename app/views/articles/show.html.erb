@@ -17,4 +17,65 @@
           class: "btn btn-primary btn-lg btn-space" %>
     </div>
   <% end %>
-</article>
+</article>  
+<hr>
+<div class="col-md-12">
+  <%= form_for [@article, @comment],
+      :html => {class: "form-horizontal", role: "form"} do |f| %>
+    <% if @comment.errors.any? %>
+      <div class='panel panel-danger col-md-offset-1'>
+        <div class='panel-heading'>
+          <h2 class='panel-title'>
+            <%= pluralize(@comment.errors.count, "error") %>
+            prohibited this comment from being saved:
+          </h2>
+          <div class='panel-body'>
+            <ul>
+              <% @comment.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>  
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    
+    <div class='form-group'>
+      <div class='control-label col-md-2'>
+        <%= f.label :body, 'New Comment' %>
+      </div>
+      <div class='col-md-10'>
+        <%= f.text_area :body, rows: 10, class: 'form-control', placeholder: 'Your comment' %>
+      </div>
+    </div>
+    
+    <div class='form-group'>
+      <div class='col-md-offset-2 col-md-10'>
+        <%= f.submit "Add Comment", class: "btn btn-primary btn-lg pull-right" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class='col-md-12'>
+  <header>
+    <h2>Comments</h2>
+  </header>
+  
+  <div class='col-md-10'>
+    <% if @article.comments.any? %>
+      <% persisted_comments(@comments).each do |comment| %>
+        <div class='comment-body'>
+          <%= comment.body %>
+        </div>
+      
+        <div class='comment-time'>
+          <%= time_ago_in_words(comment.created_at) %>
+          ago by <%= comment.user.email %>
+        </div>
+        <hr>
+      <% end %>
+    <% else %>
+      There are no comments to show.
+    <% end %>
+  </div>
+</div>
